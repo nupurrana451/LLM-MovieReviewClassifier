@@ -7,18 +7,14 @@ It classifies reviews as **Positive**, **Negative**, or **Neutral** and provides
 
 ## Features
 - **Streamlit Web App** (`streamlit_app.py`): Paste a review → get sentiment label, confidence, explanation, and highlighted evidence phrases.  
-- **Batch Evaluation** (`batch_eval.py`): Score a CSV of reviews and save results to `scored_reviews.csv`.  
+- **Batch Evaluation** (`batch_eval.py`): Score a CSV of reviews(used an IMDB dataset of 100 reviews) and save results to `scored_reviews.csv`.  
 - **LLM Wrapper** (`sentiment_llm.py`): Handles prompting, caching, and JSON parsing.
 
 ## Setup
 
 1. **Clone the repo**
-git clone <your-repo-url>
-cd Internship_assign
 
-2. **Create a Python environment** (optional but recommended)
-conda create -n gemini_api python=3.10
-conda activate gemini_api
+2. **Create a Python environment** 
 
 3. **Install dependencies**
 pip install -r requirements.txt
@@ -87,3 +83,4 @@ Internship_assign/
 
 * Gemini API free tier has **rate limits** — caching helps reduce calls.
 * Temperature and prompt design choices balance **determinism** for evaluation vs **natural UI explanations**.
+
