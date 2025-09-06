@@ -69,18 +69,19 @@ python batch_eval.py
 
 ## Project Structure
 Internship_assign/
-│
-├─ streamlit_app.py       # Streamlit web UI
-├─ batch_eval.py          # Batch scoring of reviews
-├─ sentiment_llm.py       # LLM wrapper & prompt logic
-├─ requirements.txt       # Python dependencies
-├─ README.md
-├─ REPORT.md
-├─ reviews.csv            # Sample review dataset (input)
-└─ scored_reviews.csv     # LLM scored reviews (output)
+- │
+- ├─ streamlit_app.py       # Streamlit web UI
+- ├─ batch_eval.py          # Batch scoring of reviews
+- ├─ sentiment_llm.py       # LLM wrapper & prompt logic
+- ├─ requirements.txt       # Python dependencies
+- ├─ README.md
+- ├─ REPORT.md
+- ├─ reviews.csv            # Sample review dataset (input)
+- └─ scored_reviews.csv     # LLM scored reviews (output)
 
 ## Notes
 
 * Gemini API free tier has **rate limits** — caching helps reduce calls.
 * Temperature and prompt design choices balance **determinism** for evaluation vs **natural UI explanations**.
+
 
