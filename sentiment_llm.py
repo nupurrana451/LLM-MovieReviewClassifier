@@ -2,7 +2,8 @@ import google.generativeai as genai
 import os
 import json
 import re
-
+import streamlit as st
+os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 CACHE_FILE="sentiment_cache.json"
@@ -34,7 +35,7 @@ def analyze_review(review: str,temperature: float = 0.0):
     model = genai.GenerativeModel("gemini-2.0-flash")
     response = model.generate_content(prompt,generation_config={"temperature": temperature})
 
-    text = response.text.strip()
+    text = getattr(response, "text", "").strip()
 
     match = re.search(r"\{[\s\S]*\}", text)
     if match:
@@ -62,3 +63,4 @@ def analyze_review(review: str,temperature: float = 0.0):
         json.dump(cache, f, indent=2)
 
     return result
+
