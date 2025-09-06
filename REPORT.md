@@ -21,9 +21,9 @@
 }
 
 ## 2. Failure Cases & Mitigation
-*Low-confidence predictions-->Confidence calibration(second pass)
-*Neutral class misclassified-->Strict mode favors neutral for ambiguous reviews
-*API rate limits / transient errors-->Retry + exponential backoff in batch_eval.py; caching to reduce repeated calls.
+- Low-confidence predictions-->Confidence calibration(second pass)
+- Neutral class misclassified-->Strict mode favors neutral for ambiguous reviews
+- API rate limits / transient errors-->Retry + exponential backoff in batch_eval.py; caching to reduce repeated calls.
 
 ## 3. Mini Metrics Table (Test Set)
 
@@ -33,6 +33,7 @@
 | Negative | 56         | 60              |
 | Neutral  | 3          | 3               |
 
-**Overall Accuracy:** 0.94
+# **Overall Accuracy:** 0.94
 
 > Note: Dataset contains mostly Positive/Negative reviews; Neutral is underrepresented. Metrics are approximate due to LLM subjectivity.
+
