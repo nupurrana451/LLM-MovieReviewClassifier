@@ -1,6 +1,7 @@
 import streamlit as st
 from sentiment_llm import analyze_review
 import re
+os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
 st.title("Movie Review Sentiment Analyzer")
 st.write("Enter a movie review, and the app will analyze its sentiment using a large language model.")
 mode=st.radio("Select Mode:",["Lenient","Strict"], horizontal=True)
@@ -52,3 +53,4 @@ if st.button("Analyze Review"):
 
             
         
+
